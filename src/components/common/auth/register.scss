@@ -1,0 +1,111 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.register-page {
+  @include m.flexbox(row, center, center);
+  text-align: center;
+
+  form {
+    background-color: white;
+    border: 1px solid v.$color4;
+    border-radius: 0.3rem;
+    width: 30vw !important;
+    @media (max-width: 992px) {
+      width: 50vw !important;
+    }
+    @media (max-width: 776px) {
+      width: 65vw !important;
+    }
+    @media (max-width: 576px) {
+      width: 80vw !important;
+    }
+    h3 {
+      font-weight: 600;
+      color: v.$color3;
+    }
+    .input-group {
+      > span.input-group-text {
+        // input grubun icindeki cocugu olan spanler
+        border-top-left-radius: 0.3rem;
+        border-bottom-left-radius: 0.3rem;
+        .svg {
+          color: v.$color1;
+        }
+        &:first-child {
+          svg {
+            font-size: 1.3rem;
+          }
+        }
+      }
+      .form-control {
+        background-color: v.$color4;
+        border-radius: 0 0.3rem 0.3rem 0 !important;
+        &.reg-form2 {
+          border-top-right-radius: 0.3rem !important;
+          border-bottom-right-radius: 0.3rem !important;
+        }
+      }
+      &:nth-child(7),
+      &:nth-child(8) {
+        > span.input-group-text {
+          &:nth-child(3) {
+            border-top-right-radius: 0.3rem !important;
+            border-bottom-right-radius: 0.3rem !important;
+          }
+        }
+        .form-control {
+          border-radius: 0 !important;
+        }
+      }
+    }
+    .btn {
+      border-radius: 0.3rem;
+      color: white;
+      width: 50%;
+      &:last-child {
+        background-color: v.$color3;
+        &:hover {
+          background-color: v.$color1;
+        }
+      }
+    }
+    .form-text {
+      font-size: 0.85rem;
+      &:nth-child(2) {
+        cursor: pointer;
+        color: v.$color2;
+      }
+    }
+  }
+}
+
+// .reg-page{
+//     box-sizing: border-box;
+//   background-color: v.$color4;
+//     .reg-form{
+//         background-color: white;
+
+//     }
+//     .loginButton{
+
+//     padding: 10px;
+//     width: 18%;
+
+//     }
+//     .line{
+//         width: 18%;
+//     }
+//     .pas-form{
+//         margin-left: 29%;
+//         margin-right: 26%;
+//     }
+//     .btn{
+//     margin: 15px;
+//     padding: 10px;
+//     margin-left: 42%;
+//     width: 18%;
+//     }
+// .title{
+//     text-align: center;
+// }
+//        }

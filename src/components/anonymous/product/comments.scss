@@ -1,0 +1,138 @@
+@use "../../../assets/scss/variables" as v;
+@use "../../../assets/scss/mixins" as m;
+
+.comments-tab {
+  background-color: v.$color4;
+
+  .nav-pills {
+    background-color: v.$color4;
+    margin-left: 1.5rem;
+
+    @media (max-width: 453px) {
+      margin: 0;
+    }
+    @media (max-width: 429px) {
+      font-size: 12px;
+    }
+    @media (max-width: 429px) {
+      font-size: 10px;
+      margin: 0;
+    }
+    .nav-item {
+      background-color: rgba(128, 128, 128, 0.191);
+      border-radius: 5px;
+
+      a {
+        color: v.$color1;
+        padding: 0.6rem 3rem;
+        border-radius: 5px;
+        @media (max-width: 388px) {
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .contects {
+    .desc-comm {
+      background-color: white;
+      border-radius: 5px;
+      padding: 1rem;
+      @media (max-width: 992px) {
+        padding: 0rem;
+      }
+      .description {
+        padding: 1rem;
+        white-space: pre-wrap;
+      }
+      .write {
+        padding: 1rem 2.5rem;
+
+        @media (max-width: 576px) {
+          padding: 1rem;
+        }
+
+        button {
+          border: none;
+          background-color: white;
+          border-bottom: 1px solid v.$color1;
+          @media (max-width: 992px) {
+            margin-bottom: 0.5rem;
+          }
+          &:hover {
+            color: v.$color2;
+          }
+        }
+      }
+
+      .score {
+        background-color: v.$color4;
+        margin: 1.5rem 3.5rem;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        @media (max-width: 992px) {
+          margin: 0;
+        }
+        Form {
+          .form-select {
+            width: 50%;
+            border-radius: 5px;
+            color: v.$color2;
+            @media (max-width: 576px) {
+              width: 75%;
+            }
+            option {
+              font-size: 0.9rem;
+              color: v.$color2;
+              @media (max-width: 992px) {
+                font-size: 0.8rem;
+              }
+            }
+          }
+
+          .textarea {
+            border-radius: 5px;
+          }
+          button.send {
+            padding: 0.2rem 3rem;
+            color: white;
+            background-color: v.$color2;
+            border-radius: 5px;
+            border: none;
+          }
+        }
+      }
+
+      .comments-stars-name {
+        @include m.flexbox();
+        margin: 1rem 2rem 0 2rem;
+
+        .name {
+          background-color: v.$color4;
+          border-radius: 50%;
+          padding: 1rem;
+          margin-right: 1rem;
+        }
+        .stars-comments {
+          @include m.flexbox(column);
+          margin: 0 0 2rem 0;
+          @media (max-width: 992px) {
+            margin: 0;
+          }
+          .stars {
+            color: v.$color2;
+          }
+          .comments {
+            margin-top: 1rem
+          }
+        }
+      }
+      .pagination {
+        @include m.flexbox(row, center);
+      }
+    }
+    .no-comment {
+      padding-left: 2.5rem;
+    }
+  }
+}

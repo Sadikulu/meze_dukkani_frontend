@@ -1,0 +1,107 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.side-bar {
+  height: 70vh;
+  background-color: white;
+  @include m.flexbox(column, center, center);
+  margin: 0 2rem;
+  max-width: 300px;
+  border-radius: 0.3rem;
+  @media (max-width: 768px) {
+    height: 20vh;
+    margin: 0 2rem 2rem 2rem;
+    max-width: 100%;
+  }
+  @media (min-width: 768px) {
+    height: 70vh;
+    margin: 0 2rem;
+  }
+  .brand-toggle {
+    @media (max-width: 768px) {
+      @include m.flexbox(row, center, center, 3rem);
+      margin: auto;
+      padding: 0;
+    }
+    @media (min-width: 768px) {
+      @include m.flexbox(column, center, center, 3rem);
+    }
+    .navbar-brand {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      svg {
+        font-size: 12vw;
+        background-color: silver;
+        border-radius: 50%;
+        color: v.$color3;
+        transform: translateY(-55%);
+        @media (max-width: 768px) {
+          transform: translateY(0);
+        }
+        @media (min-width: 768px) {
+          transform: translateY(-55%);
+        }
+        @media (max-width: 576px) {
+          font-size: 5rem;
+          transition: 1s;
+        }
+      }
+    }
+    .navbar-toggler {
+      border-radius: 0.3rem;
+      @media (max-width: 576px) {
+        padding: 0.3rem 0.6rem;
+        transition: 1s;
+      }
+      .navbar-toggler-icon {
+        font-size: 3vw;
+        @media (max-width: 576px) {
+          font-size: 0.9rem;
+          transition: 1s;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      .navbar-expand-md .navbar-toggler {
+        display: flex;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+  .navbar-collapse {
+    @include m.flexbox(column);
+    transform: translateY(-10%);
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 120%;
+      background-color: white;
+      z-index: 99;
+      width: 100%;
+      border-bottom-right-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+    }
+    @media (min-width: 768px) {
+      position: static;
+    }
+    .navbar-nav {
+      @include m.flexbox(column);
+      @media (max-width: 768px) {
+        padding-bottom: 1rem;
+        margin: auto;
+      }
+      @media (min-width: 768px) {
+        padding: 0;
+        margin: 0 auto;
+      }
+      .nav-link {
+        font-size: 1.1rem;
+        font-weight: 500;
+      }
+    }
+  }
+}

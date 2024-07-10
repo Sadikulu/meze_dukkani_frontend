@@ -1,0 +1,74 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.admin-categories {
+  .row > *{
+    .input-group {
+      &.searchbox {
+        .form-control {
+          background-color: v.$color4;
+          border: none;
+          padding: 0.7rem;
+          &:focus {
+            background-color: white;
+            outline: 0;
+            box-shadow: 0 0 0 0.10rem v.$color1;
+          }
+        }
+        ::placeholder {
+          font-size: 0.7rem;
+        }
+        .input-group-text {
+          background-color: v.$color1;
+          border: 1px solid v.$color1;
+          svg {
+            color: white;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      &.selectbox {
+        .form-select {
+          background-color: v.$color4;
+          border: none;
+          padding: 0.7rem;
+          font-size: .8rem;
+          border-radius: 0;
+          &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.10rem v.$color1;
+          }
+          option {
+            font-size: 0.9rem;
+          }
+        }
+        .btn-secondary {
+          color: white;
+          border: none;
+          padding: 0.7rem;
+          @media (max-width: 360px) {
+            font-size: 0.8rem;
+            padding: .85rem .4rem;
+          }
+        }
+      }
+    }
+  }
+  .rdt_TableHead {
+    display: none;
+  }
+  .rdt_TableBody {
+    :hover {
+      background-color: v.$color4;
+    }
+  }
+  .rdt_TableCell {
+    font-weight: 600;
+    &:hover {
+      cursor: pointer;
+    }
+    &:last-child {
+      @include m.flexbox(row, center, center);
+    }
+  }
+}

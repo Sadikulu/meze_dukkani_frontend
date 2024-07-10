@@ -1,0 +1,123 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.admin-user-edit-2 {
+  .admin-user-edit-2-div {
+    background-color: v.$color4;
+    .nav-tabs {
+      background-color: white;
+      border: none !important;
+      .active {
+        color: rgb(133, 133, 133) !important;
+        background-color: v.$color4 !important;
+      }
+      button {
+        background-color: #cecece;
+        margin: 0 0.1rem;
+        padding: 0.1rem 2rem 0.1rem 2rem;
+        color: rgb(133, 133, 133);
+        border: none;
+        min-width: 9rem;
+        @media (max-width: 768px) {
+          width: 60vw;
+          text-align: center;
+        }
+        @media (width: 768px) {
+          @include m.flexbox(row, center, center);
+          width: 152px;
+          text-align: left;
+        }
+      }
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+      @media (width: 768px) {
+        justify-content: flex-start;
+      }
+    }
+    tbody {
+      white-space: nowrap;
+      tr {
+        &:hover {
+          color: v.$color2;
+        }
+      }
+    }
+    .tab-content {
+      padding: 3rem;
+      @media (max-width: 576px) {
+        font-size: 0.8rem;
+        padding: 2rem 0.5rem;
+      }
+      .orders-tab {
+        .form-control {
+          border: none;
+          &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.1rem v.$color1;
+          }
+          @media (max-width: 576px) {
+            font-size: 0.8rem;
+          }
+        }
+        .form-label {
+          font-size: 1rem;
+          margin: 0;
+          @media (max-width: 576px) {
+            font-size: 0.8rem;
+          }
+        }
+        .form-select {
+          border: none;
+          border-radius: 0;
+          margin-right: 6rem;
+          &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.1rem v.$color1;
+          }
+          option {
+            font-size: 0.9rem;
+            @media (max-width: 576px) {
+              font-size: 0.8rem;
+            }
+          }
+          @media (max-width: 576px) {
+            font-size: 0.8rem;
+          }
+        }
+        tbody {
+          tr {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .reviews-tab {
+        tbody {
+          white-space: normal;
+        }
+      }
+      .addresses-tab {
+        tbody {
+          white-space: normal;
+        }
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        padding-right: 0;
+        @media (max-width: 576px) {
+          --bs-pagination-padding-x: 0.5rem !important;
+          --bs-pagination-padding-y: 0.3rem !important;
+          --bs-pagination-font-size: 0.8rem !important;
+        }
+        @media (max-width: 360px) {
+          --bs-pagination-padding-x: 0.4rem !important;
+          --bs-pagination-padding-y: 0.2rem !important;
+          --bs-pagination-font-size: 0.7rem !important;
+        }
+      }
+    }
+  }
+}

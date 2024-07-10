@@ -1,0 +1,113 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.shop-products-layout {
+  .product-card {
+    @include m.flexbox(row, space-between, center);
+    position: relative;
+    .a-link {
+      text-decoration: none;
+      flex: 5;
+      margin: auto;
+      @media (max-width: 992px) {
+        min-height: 26vh;
+      }
+      @media (max-width: 521px) {
+        min-height: 25vh;
+      }
+      span {
+        @media (max-width: 450px) {
+          font-size: 0.9rem;
+        }
+      }
+      .card-text {
+        top: -0.6rem;
+      }
+      img {
+        padding: 0.8rem !important;
+        margin-top: 1rem;
+      }
+      .stock-amount {
+        .card-text {
+          position: absolute;
+          right: 0;
+
+          span {
+          }
+        }
+      }
+      .cargo-free {
+        .card-text {
+          top: 2.5rem;
+          position: absolute;
+          right: auto;
+          left: 38%;
+          bottom: auto;
+          @media (max-width: 1100px) {
+            left: 35%;
+          }
+          @media (max-width: 992px) {
+            left: 35%;
+          }
+          @media (max-width: 767px) {
+            left: 36%;
+          }
+          @media (max-width: 400px) {
+            left: 33%;
+          }
+          span {
+            @media (max-width: 380px) {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
+    .card-body {
+      flex: 7;
+      margin-top: 0.5rem;
+      .discounted {
+        @include m.flexbox(row, space-between, center);
+        font-size: 1.2rem;
+        padding: 0;
+        @media (max-width: 767px) {
+          margin-top: 0.2rem;
+        }
+        @media (max-width: 550px) {
+          margin-top: 0.2rem;
+        }
+
+        span {
+          flex: 1;
+        }
+        .original-price {
+          flex: 1;
+        }
+      }
+      .non-discount {
+      }
+      .card-title {
+        @media (max-width: 400px) {
+          font-size: 1rem !important;
+        }
+      }
+
+      @include m.flexbox(column, center, space-between, 1.5rem);
+      @media (max-width: 521px) {
+        gap: 0.5rem;
+      }
+      a {
+        @include m.flexbox(column, center, space-between, 1.5rem);
+        @media (max-width: 521px) {
+          gap: 0.5rem;
+        }
+      }
+
+      button {
+        @media (max-width: 521px) {
+          margin: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+.footer {
+  background-color: v.$color1;
+  color: white;
+  .container {
+    .footer-top {
+      [class^="col-"] {
+        &:first-child {
+          a {
+            @include m.flexbox(row, center, center);
+            img {
+              max-width: 80%;
+              @media (max-width: 992px) {
+                max-width: 60%;
+              }
+              @media (max-width: 575px) {
+                max-width: 35%;
+              }
+            }
+          }
+        }
+        p {
+          text-align: justify;
+          @media (max-width: 576px) {
+            margin: 0 1.5rem;
+          }
+        }
+        h5 {
+          margin-bottom: 1.5rem;
+          @media (max-width: 992px) {
+            text-align: center;
+          }
+        }
+        ul {
+          :hover {
+            color: v.$color2 !important;
+          }
+          @media (max-width: 992px) {
+            @include m.flexbox(column, center, center, 0.5rem);
+          }
+          @include m.flexbox(column, center, flex-start, 0.5rem);
+          padding-left: 1rem;
+          li {
+            a {
+              color: white;
+              text-decoration: none;
+            }
+          }
+        }
+        &:last-child {
+          ul {
+            @include m.reset-list;
+            li {
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      @include m.flexbox(row, space-around, center);
+      margin-top: 3rem;
+      [class^="col-"] {
+        @media (max-width: 992px) {
+          @include m.flexbox(column, center, center, 0.5rem);
+        }
+        h6 {
+          @include m.flexbox(row, flex-end, center);
+          white-space: nowrap;
+          @media (max-width: 575px) {
+            font-size: 75%;
+          }
+        }
+        img {
+          @include m.flexbox(row, center, center);
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@use "../../../assets/scss/variables" as v;
+@use "../../../assets/scss/mixins" as m;
+
+.admin-reviews {
+  box-sizing: content-box;
+  .row.input-groups {
+    .input-group {
+      &.searchbox {
+        .form-control {
+          background-color: v.$color4;
+          border: none;
+          padding: 0.7rem;
+          &:focus {
+            background-color: white;
+            outline: 0;
+            box-shadow: 0 0 0 0.1rem v.$color1;
+          }
+        }
+        ::placeholder {
+          font-size: 0.7rem;
+        }
+        .input-group-text {
+          background-color: v.$color1;
+          border: 1px solid v.$color1;
+          svg {
+            color: white;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      &.selectbox {
+        .form-select {
+          background-color: v.$color4;
+          border: none;
+          padding: 0.7rem;
+          font-size: 1rem;
+          border-radius: 0;
+          &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 0.1rem v.$color1;
+          }
+          option {
+            font-size: 0.9rem;
+          }
+        }
+      }
+      &.selectbox.option-star{
+        .form-select {
+          color: v.$color2;
+
+        }
+        option{
+          font-size: 1.1rem;
+          color: v.$color2;
+        }
+      }
+    }
+  }
+  .reviews-layout {
+    .comments-stars-name {
+      border-bottom: 1px solid v.$color4;
+      margin: 2rem;
+      .name {
+        @include m.flexbox(row, center, center);
+        background-color: v.$color4;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        .content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        @media (max-width: 768px) {
+          display: none;
+        }
+        @media (width: 768px) {
+          display: flex;
+        }
+      }
+      .stars-comments {
+        margin: 0.6rem 0 1.5rem 0;
+        .stars {
+          margin-bottom: 0.5rem;
+          color: v.$color2;
+        }
+      }
+      .switch-delete {
+        @media (min-width: 1200px) {
+          @include m.flexbox(row, flex-end, flex-start);
+        }
+        form {
+          @include m.flexbox(column, center, flex-start, 1rem);
+          @media (max-width: 768px) {
+            @include m.flexbox(row, center, center, 2rem);
+            margin-bottom: 1rem;
+          }
+          @media (width: 768px) {
+            @include m.flexbox(column, center, flex-start, 1rem);
+            margin-bottom: 0;
+          }
+          .form-switch {
+            @include m.flexbox(row, flex-start, center, 1rem);
+            .form-check-input {
+              background-color: v.$color4;
+              cursor: pointer;
+              border: none;
+              padding: 0.65rem 1.5rem;
+              &:checked {
+                background-color: v.$color2;
+                border-color: v.$color2;
+              }
+              &:focus {
+                outline: 0;
+                box-shadow: 0 0 0 0 v.$color1;
+              }
+            }
+            .form-check-label {
+              font-size: 1rem;
+              margin-top: 0.4rem;
+            }
+          }
+          span {
+            @include m.flexbox(row, flex-end, center);
+            svg {
+              color: v.$color2;
+              font-size: 1.5rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+    @media (max-width: 576px) {
+      --bs-pagination-padding-x: 0.5rem !important;
+      --bs-pagination-padding-y: 0.3rem !important;
+      --bs-pagination-font-size: 0.8rem !important;
+    }
+    @media (max-width: 360px) {
+      --bs-pagination-padding-x: 0.4rem !important;
+      --bs-pagination-padding-y: 0.2rem !important;
+      --bs-pagination-font-size: 0.7rem !important;
+    }
+  }
+}

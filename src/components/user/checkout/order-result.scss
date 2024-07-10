@@ -1,0 +1,56 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.order-result {
+  .order-result-body {
+    .order-result-header {
+        @include m.flexbox(column, flex-start, center);
+        margin-bottom: 2rem;
+        .order-result-icon {
+            svg{
+                font-size: 3rem;
+                color: v.$color1;
+            }
+        }
+      .order-result-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: v.$color1;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      .order-result-code {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+      }
+    }
+    .order-result-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+      p {
+        margin: 0;
+      }
+    }
+    .order-result-orders-link{
+        font-size: 1.125rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        a{
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+    .order-result-thank-you {
+      font-size: 1.125rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 767px) {
+      .order-result-details {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

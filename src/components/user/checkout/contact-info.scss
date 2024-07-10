@@ -1,0 +1,72 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.contact-info {
+  form {
+    background-color: white;
+    border-radius: 0.3rem;
+    padding: 3rem;
+    .contact-information {
+      .input-group {
+        .form-control {
+          background-color: v.$color4;
+          border-radius: 0.3rem !important;
+        }
+        .form-select {
+          background-color: v.$color4;
+          border-top-left-radius: 0.3rem;
+          border-bottom-left-radius: 0.3rem;
+        }
+        .input-group-text {
+          border-top-right-radius: 0.3rem !important;
+          border-bottom-right-radius: 0.3rem !important;
+          background-color: rgb(210, 210, 210);
+        }
+      }
+    }
+    .credit-form {
+      .input-group {
+        .form-control {
+          border-radius: 0.3rem;
+          background-color: v.$color4;
+        }
+        .input-group-text {
+          border-top-right-radius: 0.3rem;
+          border-bottom-right-radius: 0.3rem;
+          .btn {
+            background-color: rgb(210, 210, 210);
+            border: none;
+            font-weight: 500;
+            &:hover {
+              color: v.$color1 !important;
+            }
+          }
+        }
+      }
+      h2 {
+        color: white;
+        background-color: v.$color1;
+        margin-bottom: 1rem;
+        line-height: 2.43rem;
+        text-align: center;
+        border-radius: 0.3rem;
+      }
+      .form-control {
+        border-radius: 0.3rem;
+        background-color: v.$color4;
+      }
+      .form-check {
+        .form-check-label {
+          font-size: 0.85rem;
+        }
+      }
+      .btn-secondary {
+        padding: 0.3rem 0;
+        color: white;
+        border-radius: 0.3rem;
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

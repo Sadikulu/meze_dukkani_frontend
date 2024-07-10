@@ -1,0 +1,22 @@
+.shop {
+  .showMessage {
+    text-align: center;
+    margin-top: 10rem;
+    font-size: 1.5rem;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+    @media (max-width: 576px) {
+      --bs-pagination-padding-x: 0.5rem !important;
+      --bs-pagination-padding-y: 0.3rem !important;
+      --bs-pagination-font-size: 0.8rem !important;
+    }
+    @media (max-width: 360px) {
+      --bs-pagination-padding-x: 0.4rem !important;
+      --bs-pagination-padding-y: 0.2rem !important;
+      --bs-pagination-font-size: 0.7rem !important;
+    }
+  }
+}

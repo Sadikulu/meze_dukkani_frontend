@@ -1,0 +1,40 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.address-list {
+  .card {
+    border-radius: 0.3rem !important;
+    &:hover svg {
+        display: block !important;
+      }
+    .row {
+      div {
+        &:nth-child(1){
+          .card-title{
+            color: v.$color1;
+          }
+          .card-text{
+            @include m.flexbox(row, flex-start, center, .5rem);
+            color: v.$color3;
+            @media (max-width: 400px) {
+              @include m.flexbox(column, center, flex-start, .2rem);
+            }
+          }
+        }
+        &:nth-child(2) {
+          padding: 1rem;
+          @include m.flexbox(row, center, center, 1rem);
+          svg {
+            font-size: 1.5rem;
+            color: v.$color2;
+            display: none;
+            cursor: pointer;
+            @media (max-width: 767px) {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

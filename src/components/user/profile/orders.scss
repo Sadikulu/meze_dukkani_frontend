@@ -1,0 +1,41 @@
+.orders-data-table {
+  .sc-dmctIk {
+    font-size: 1rem;
+  }
+  .beUiVL {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .rdt_Table {
+    padding: 0 2rem 0 2rem;
+  }
+  .rdt_TableHeader {
+    padding: 1.5rem 3rem 1rem 3rem;
+    border-radius: 0.3rem 0.3rem 0 0;
+    white-space: nowrap;
+    text-overflow: clip;
+  }
+  .rdt_Pagination {
+    border-radius: 0 0 0.3rem 0.3rem;
+  }
+  .orders-data-table-row {
+    margin-top: 3rem;
+    @media (max-width: 992px) {
+      margin-top: 0;
+      transition: 1s;
+    }
+    @media (min-width: 992px) {
+      margin-top: 3rem;
+      transition: 1s;
+    }
+    @media (max-width: 768px) {
+      margin-top: -3rem;
+      transition: 1s;
+    }
+  }
+  .rdt_TableCell {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

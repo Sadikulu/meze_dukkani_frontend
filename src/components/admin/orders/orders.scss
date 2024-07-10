@@ -1,0 +1,88 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.orders-page {
+  .row {
+    &.searchbox {
+      .form-control {
+        background-color: v.$color4;
+        border: none;
+        padding: 0.7rem;
+        &:focus {
+          background-color: white;
+          outline: 0;
+          box-shadow: 0 0 0 0.1rem v.$color1;
+        }
+      }
+      ::placeholder {
+        font-size: 0.7rem;
+      }
+      .input-group-text {
+        background-color: v.$color1;
+        border: 1px solid v.$color1;
+        svg {
+          color: white;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    &.date-and-status {
+      .form-control {
+        background-color: v.$color4;
+        border: none;
+        &:focus {
+          background-color: white;
+          outline: 0;
+          box-shadow: 0 0 0 0.1rem v.$color1;
+        }
+        @media (max-width: 576px) {
+          font-size: 0.8rem;
+        }
+      }
+      .form-label {
+        font-size: 1rem;
+        margin: 0;
+        @media (max-width: 576px) {
+          font-size: 0.8rem;
+        }
+      }
+      .form-select {
+        background-color: v.$color4;
+        border: none;
+        border-radius: 0;
+        margin-right: 6rem;
+        &:focus {
+          outline: 0;
+          box-shadow: 0 0 0 0.1rem v.$color1;
+        }
+        option {
+          font-size: 0.9rem;
+          @media (max-width: 576px) {
+            font-size: 0.8rem;
+          }
+        }
+        @media (max-width: 576px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  .rdt_Table {
+    .rdt_TableHead {
+      font-size: 0.9rem;
+      .rdt_TableCol {
+        font-weight: 600;
+      }
+    }
+    .rdt_TableBody {
+      :hover {
+        background-color: v.$color4;
+      }
+    }
+    .rdt_TableCell {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

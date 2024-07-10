@@ -1,0 +1,248 @@
+@use "../../../assets/scss/variables" as v;
+@use "../../../assets/scss/mixins" as m;
+
+.allProduct-details {
+  background-color: v.$color4;
+
+  //product-details.js
+  .product-details {
+    margin-top: 3rem;
+
+    .row-swiper {
+      .swiper-col {
+        .mySwiper1 {
+          margin-bottom: 1.5rem;
+          border-radius: 0.3rem;
+          .swiper-button-prev {
+            color: v.$color1;
+            opacity: 0.5;
+            &:active {
+              color: v.$color2;
+            }
+          }
+          .swiper-button-next {
+            color: v.$color1;
+            opacity: 0.5;
+            &:active {
+              color: v.$color2;
+            }
+          }
+          .card {
+            border-radius: 0.3rem;
+            border: none;
+
+            img {
+              padding: 2rem;
+              width: 75%;
+              margin: auto;
+              @media (max-width: 992px) {
+                width: 100%;
+              }
+              @media (max-width: 776px) {
+                width: 75%;
+              }
+            }
+          }
+        }
+        .mySwiper2 {
+          background-color: white;
+          border-radius: 0.3rem;
+          cursor: pointer;
+          @media (max-width: 576px) {
+            margin-bottom: 2rem;
+          }
+          .card {
+            border-radius: 0.3rem;
+            border: none;
+            img {
+              padding: 0.5rem;
+            }
+          }
+        }
+      }
+
+      .content-col {
+        @media (max-width: 767px) {
+          margin-top: 2rem;
+        }
+        .stars-comments {
+          @include m.flexbox(row, flex-start, center, 2rem);
+          .stars {
+            color: v.$color2;
+          }
+
+          .score-comment {
+            span {
+              &:nth-child(3) {
+                a {
+                  text-decoration: none;
+                  cursor: pointer;
+                  margin-left: 0.5rem;
+                  &:hover {
+                    color: v.$color2;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .stock-amount-cargo-free {
+          @include m.flexbox(row, space-between, center);
+
+          .stock-amount{
+            span {
+              background-color: v.$color1;
+              color: v.$color4;
+              padding: 0.2rem 0.5rem;
+              border-radius: 0.5rem;
+              font-size: 1.2rem;
+            }
+          }
+          .cargo-free {
+            div {
+              display: flex;
+              align-items: center;
+              flex-direction: column;
+              border-radius: 50%;
+              background-color: v.$color2;
+              padding: 0.5rem;
+              span {
+                color: v.$color4;
+                font-size: 1.2rem;
+                font-weight: bold;
+                &:nth-child(1) {
+                  margin-bottom: -0.5rem;
+                }
+              }
+            }
+          }
+        }
+        
+        .price-heart {
+          @include m.flexbox(row, space-between, center);
+          .price {
+            span {
+              del {
+                font-weight: 600;
+              }
+            }
+          }
+          .heart {
+            background-color: rgba(128, 128, 128, 0.308);
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            height: 3rem;
+            width: 3rem;
+            @include m.flexbox(row, center, center);
+
+            svg {
+              color: v.$color2;
+            }
+          }
+        }
+        .coming-soon{
+          a {
+            background-color: v.$color1;
+            color: v.$color4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+          }
+        }
+        .btn {
+          padding: 0;
+          color: white;
+          border: none;
+          &.add-button {
+            @include m.flexbox(row, center, center);
+            width: 100%;
+            background-color: v.$color2;
+            border-radius: 5px;
+            span {
+              padding: 0.5rem;
+              &:first-child {
+                color: white;
+                font-weight: 500;
+              }
+              &:last-child {
+                background-color: v.$color2;
+                svg {
+                  font-size: 1.5rem;
+                }
+              }
+            }
+          }
+        }
+        .btn-group {
+          width: 100%;
+
+          .btn {
+            padding: 0.5rem;
+
+            &:first-child {
+              flex: 1;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+              svg {
+                font-size: 1.5rem;
+              }
+            }
+            &:last-child {
+              flex: 1;
+              border-top-right-radius: 5px;
+              border-bottom-right-radius: 5px;
+              svg {
+                font-size: 1.5rem;
+              }
+            }
+            &:nth-child(2) {
+              flex: 5;
+              color: white;
+            }
+          }
+        }
+        .shipping {
+          padding: 1rem;
+          background-color: rgba(255, 255, 255, 0.507);
+          border: none;
+          border-radius: 5px;
+          color: grey;
+          cursor: default;
+          white-space: pre-line;
+          text-align: start;
+
+          @media (min-width: 776px) and (max-width: 992px) {
+            white-space: normal;
+            padding: 0.5rem;
+          }
+          p {
+            svg {
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-slide-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .swiper-slide-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease-out;
+  }
+  .swiper-slide-image-container img:hover,
+  .swiper-slide-image-container img[data-hovered="true"] {
+    transform: scale(1.1);
+    z-index: 1;
+  }
+}

@@ -1,0 +1,160 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.admin-products {
+  .row {
+    .input-group {
+      .form-control {
+        background-color: v.$color4;
+        border: none;
+        padding: 0.7rem;
+        &:focus {
+          background-color: white;
+          outline: 0;
+          box-shadow: 0 0 0 0.10rem v.$color1;
+        }
+      }
+      ::placeholder {
+        font-size: 0.7rem;
+      }
+      span {
+        background-color: v.$color1;
+        border: 1px solid v.$color1;
+        @media (max-width: 425px) {
+          display: none;
+        }
+        svg {
+          color: white;
+          font-size: 1.2rem;
+        }
+      }
+      .btn-secondary {
+        color: white;
+        border: none;
+        padding: 0.7rem;
+        @media (max-width: 360px) {
+          font-size: 0.8rem;
+          padding: .85rem .4rem;
+        }
+      }
+    }
+    .form-select {
+      background-color: v.$color4;
+      border: none;
+      border-radius: 0;
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.10rem v.$color1;
+      }
+      option {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    .card {
+      padding: 1rem;
+      border: none;
+      margin-top: 1rem;
+      .content {
+        > [class^="col-"] {
+          &:nth-child(1) {
+            @include m.flexbox(row, center, center);
+            .card-img-left {
+              max-width: 150px;
+              transition: transform 0.5s ease;
+              transform-origin: center center;
+              &:hover {
+                transform: scale(1.2);
+              }
+              @media (min-width: 768px) {
+                max-width: 100px;
+              }
+            }
+          }
+          &:nth-child(2) {
+            margin-left: auto;
+            margin-right: auto;
+            .card-title {
+              font-size: 1.1rem;
+              margin-left: 0.7rem;
+              @media (max-width: 767px) {
+                text-align: center;
+                margin-left: 0;
+                margin-top: 1rem;
+              }
+              @media (min-width: 766px) {
+                text-align: center;
+                margin-left: 0;
+                margin-top: 1rem;
+              }
+              @media (min-width: 768px) {
+                text-align: left;
+                margin-left: 0.7rem;
+              }
+            }
+            .row {
+              margin-left: auto;
+              margin-right: auto;
+              [class^="col-"] {
+                white-space: nowrap;
+                @media (max-width: 400px) {
+                  padding-left: 0;
+                  padding-right: 0;
+                  transition: 1s;
+                  overflow-x: scroll;
+                }
+                svg {
+                  font-size: 0.8rem;
+                  color: v.$color2;
+                }
+                span {
+                  font-size: 0.7rem;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+          &:nth-child(3) {
+            padding-left: 0;
+            padding-right: .5rem;
+            .card-title {
+              margin-right: 1rem;
+              text-align: end;
+              font-size: 1rem;
+              @media (max-width: 767px) {
+                text-align: center;
+                margin-top: 0.5rem;
+              }
+              @media (min-width: 766px) {
+                text-align: center;
+                margin-top: 0.5rem;
+              }
+              @media (min-width: 768px) {
+                text-align: end;
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+    @media (max-width: 576px) {
+      --bs-pagination-padding-x: 0.5rem !important;
+      --bs-pagination-padding-y: 0.3rem !important;
+      --bs-pagination-font-size: 0.8rem !important;
+    }
+    @media (max-width: 360px) {
+      --bs-pagination-padding-x: 0.4rem !important;
+      --bs-pagination-padding-y: 0.2rem !important;
+      --bs-pagination-font-size: 0.7rem !important;
+    }
+  }
+}

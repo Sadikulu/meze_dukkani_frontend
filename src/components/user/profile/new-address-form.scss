@@ -1,0 +1,29 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.new-address-form {
+  .btn-secondary {
+    color: white;
+    width: 8rem;
+    border-radius: 0.3rem;
+  }
+}
+.new-address-form-offcanvas {
+  .offcanvas-header {
+    padding-bottom: 0.5rem;
+  }
+  .offcanvas-body {
+    padding-top: 0.5rem;
+    form {
+      .form-control {
+        border-radius: 0.5rem;
+        background-color: v.$color4;
+      }
+      .btn-secondary {
+        color: white;
+        width: 8rem;
+        border-radius: 0.3rem;
+      }
+    }
+  }
+}

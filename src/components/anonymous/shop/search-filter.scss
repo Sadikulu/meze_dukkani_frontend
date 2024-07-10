@@ -1,0 +1,63 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.search-filter {
+  @include m.flexbox(row, space-between, stretch, 1rem);
+  @media (max-width: 576px) {
+    @include m.flexbox(column);
+  }
+
+  .input-group {
+    flex: 2;
+    @media (max-width: 991px) {
+      flex: 1;
+    }
+    .form-control {
+      border-radius: 5px;
+    }
+    .btn-svg {
+      background-color: v.$color2;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+
+  .form-tblayout {
+    @include m.flexbox(row, center);
+    flex: 1;
+
+    @media (max-width: 576px) {
+      width: 100%;
+      margin-bottom: 1rem;
+      margin-top: -1rem;
+    }
+
+    .form-select {
+      border-right: none;
+      padding: 0.375rem 7rem 0.375rem 0.3rem;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      z-index: 1;
+      option {
+        @media (max-width: 992px) {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    .tblayout {
+      padding: 0.375rem 1.25rem 0.375rem 0.75rem;
+      background-color: white;
+      border-top: 1px solid #ced4da;
+      border-right: 1px solid #ced4da;
+      border-bottom: 1px solid #ced4da;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      cursor: pointer;
+      svg {
+        &:hover {
+          color: v.$color2;
+        }
+      }
+    }
+  }
+}

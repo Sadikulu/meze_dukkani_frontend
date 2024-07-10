@@ -1,0 +1,19 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.common-products {
+  .section-header {
+    @include m.flexbox(row, space-between, center);
+    padding-bottom: 0.5rem;
+
+    h2 {
+      font-weight: 700;
+    }
+    a {
+      text-decoration: none;
+      h5 {
+        font-weight: 600;
+      }
+    }
+  }
+}

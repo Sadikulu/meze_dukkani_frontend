@@ -1,0 +1,255 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.admin-product-edit {
+  .stock-alarm {
+    white-space: nowrap;
+  }
+  //1.col
+  .like-active {
+    @include m.flexbox(column);
+    ul {
+      margin: 0 0 2rem 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        margin: 0.5rem 0;
+        span {
+          white-space: nowrap;
+        }
+      }
+    }
+    .form-switch {
+      @include m.flexbox(row, flex-start, center, 1rem);
+      .form-check-input {
+        background-color: v.$color4;
+        cursor: pointer;
+        border: none;
+        padding: 0.65rem 1.5rem;
+        &:checked {
+          background-color: v.$color2;
+          border-color: v.$color2;
+        }
+        &:focus {
+          outline: 0;
+          box-shadow: 0 0 0 0 v.$color1;
+        }
+      }
+      .form-check-label {
+        font-size: 1rem;
+        margin-top: 0.4rem;
+      }
+    }
+  }
+  //2.col kısmı
+  .form-control,
+  .form-select {
+    background-color: v.$color4;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    &:focus {
+      background-color: white;
+      outline: 0;
+      box-shadow: 0 0 0 0.1rem v.$color1;
+    }
+  }
+
+  .card-add-delete {
+    background-color: v.$color4;
+    padding: 2rem;
+    position: relative;
+    div {
+      img {
+        @media (max-width: 600px) {
+          width: 200px;
+        }
+      }
+    }
+    span {
+      .plus {
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        font-size: 3rem;
+        color: v.$color2;
+      }
+    }
+    > [class^="col"] {
+      .deleteCard {
+        border: none;
+        padding: 1rem;
+        position: relative;
+        @include m.flexbox(row, center, center);
+        .minus {
+          position: absolute;
+          top: -0.8rem;
+          left: 0;
+          right: 0;
+          margin: auto;
+          cursor: pointer;
+          color: v.$color2;
+          font-size: 1.5rem;
+          display: none;
+        }
+        .showcase {
+          position: absolute;
+          bottom: -0.8rem;
+          left: 0;
+          right: 0;
+          margin: auto;
+          cursor: pointer;
+          color: v.$color2;
+          font-size: 1.5rem;
+          display: none;
+          &:hover + .text {
+            display: block !important;
+          }
+        }
+        .text {
+          position: absolute;
+          bottom: -2rem;
+          left: 0 !important;
+          right: 0 !important;
+          text-align: center;
+          margin: auto;
+          color: v.$color1;
+          font-size: 0.7rem;
+          font-weight: 600;
+          display: none;
+        }
+        &:hover svg {
+          display: block !important;
+        }
+        .showcaseNone {
+          display: none;
+        }
+      }
+    }
+  }
+  div.alert{
+    @include m.flexbox(row, flex-start);
+    padding: 0;
+    border: 0;
+    .alert-warning, .alert-danger {
+      border: none;
+      padding: 0.5rem;
+    }
+  }
+  div {
+    //buttons
+    .btn-group {
+      gap: 0.8rem;
+      .btn {
+        width: 8rem;
+        color: white;
+        font-size: 1.1rem;
+        @media (max-width: 385px) {
+          width: 7rem;
+        }
+      }
+    }
+  }
+
+  //comments kısmı
+  .product-reviews-layout {
+    h5 {
+      margin-left: 2rem;
+    }
+    .comments-stars-name {
+      border-bottom: 1px solid v.$color4;
+      margin: 2rem;
+      .name {
+        @include m.flexbox(row, center, center);
+        background-color: v.$color4;
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        .content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        @media (max-width: 768px) {
+          display: none;
+        }
+        @media (width: 768px) {
+          display: flex;
+        }
+      }
+      .stars-comments {
+        margin: 0.6rem 0 1.5rem 0;
+        .stars {
+          margin-bottom: 0.5rem;
+          color: v.$color2;
+        }
+      }
+      .switch-delete {
+        @media (min-width: 1200px) {
+          @include m.flexbox(row, flex-end, flex-start);
+        }
+        form {
+          @include m.flexbox(column, center, flex-start, 1rem);
+          @media (max-width: 768px) {
+            @include m.flexbox(row, center, center, 2rem);
+            margin-bottom: 1rem;
+          }
+          @media (width: 768px) {
+            @include m.flexbox(column, center, flex-start, 1rem);
+            margin-bottom: 0;
+          }
+          .form-switch {
+            @include m.flexbox(row, flex-start, center, 1rem);
+            .form-check-input {
+              background-color: v.$color4;
+              cursor: pointer;
+              border: none;
+              padding: 0.65rem 1.5rem;
+              &:checked {
+                background-color: v.$color2;
+                border-color: v.$color2;
+              }
+              &:focus {
+                outline: 0;
+                box-shadow: 0 0 0 0 v.$color1;
+              }
+            }
+            .form-check-label {
+              font-size: 1rem;
+              margin-top: 0.4rem;
+            }
+          }
+          span {
+            @include m.flexbox(row, flex-end, center);
+            svg {
+              color: v.$color2;
+              font-size: 1.5rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding-right: 0;
+    @media (max-width: 576px) {
+      --bs-pagination-padding-x: 0.5rem !important;
+      --bs-pagination-padding-y: 0.3rem !important;
+      --bs-pagination-font-size: 0.8rem !important;
+    }
+    @media (max-width: 360px) {
+      --bs-pagination-padding-x: 0.4rem !important;
+      --bs-pagination-padding-y: 0.2rem !important;
+      --bs-pagination-font-size: 0.7rem !important;
+    }
+  }
+}

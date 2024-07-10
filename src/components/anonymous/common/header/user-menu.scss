@@ -1,0 +1,50 @@
+@use "../../../../assets/scss/variables" as v;
+@use "../../../../assets/scss/mixins" as m;
+
+.user-menu {
+  .dropdown {
+    .dropdown-user {
+      border-radius: 0.3rem;
+      @media (max-width: 992px) {
+        width: 100%;
+        margin: 0;
+      }
+    }
+    .dropdown-toggle::after {
+      content: "";
+      margin-left: 1rem;
+    }
+    .dropdown-menu {
+      @media (max-width: 992px) {
+        position: static;
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+      }
+    }
+    .dropdown-divider {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      &:hover {
+        color: v.$color2;
+      }
+      color: v.$color1;
+    }
+    @media (max-width: 992px) {
+      background: white;
+      border: none;
+      border-radius: 0.35rem;
+    }
+  }
+  .btn-account {
+    border-radius: 0.3rem;
+    background-color: v.$color1;
+    @media (max-width: 992px) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}

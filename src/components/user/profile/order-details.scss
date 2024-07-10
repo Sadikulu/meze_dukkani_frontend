@@ -1,0 +1,75 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.order-details {
+  .order-details-row {
+    margin-top: 3rem;
+    @media (max-width: 992px) {
+      margin-top: 0;
+      transition: 1s;
+    }
+    @media (min-width: 992px) {
+      margin-top: 3rem;
+      transition: 1s;
+    }
+    @media (max-width: 768px) {
+      margin-top: -3rem;
+      transition: 1s;
+    }
+  }
+  .order-detail {
+    background-color: white;
+    padding: 2rem !important;
+    border-radius: 0.3rem;
+    .first-row {
+      > [class^="col-"] {
+        margin: 0.5rem 0;
+      }
+    }
+    table.order-details-table {
+      margin-top: 1rem;
+      border-collapse: separate;
+      text-align: center;
+      @media (max-width: 400px) {
+        font-size: .8rem;
+      }
+      td {
+        text-align: center;
+        &:nth-child(2) {
+          text-align: start;
+        }
+        &:last-child {
+          text-align: end;
+        }
+      }
+      thead {
+        background-color: v.$color4;
+        tr :last-child {
+          text-align: end;
+        }
+        tr :nth-child(2) {
+          text-align: start;
+        }
+      }
+      tbody {
+        tr {
+          vertical-align: middle;
+        }
+        img {
+          width: 70px;
+          @media (max-width: 400px) {
+            width: 50px;
+          }
+        }
+      }
+    }
+    a {
+      color: v.$color2;
+      text-decoration: none;
+      svg {
+        font-size: 1.5rem;
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}

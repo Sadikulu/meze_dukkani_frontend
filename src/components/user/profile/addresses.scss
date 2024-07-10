@@ -1,0 +1,72 @@
+@use "../../../assets/scss/variables" as v;
+@use "../../../assets/scss/mixins" as m;
+
+.addresses{
+  .addresses-row{
+    margin-top: 3rem;
+    @media (max-width: 992px) {
+      margin-top: 0;
+      transition: 1s;
+    }
+    @media (min-width: 992px) {
+      margin-top: 3rem;
+      transition: 1s;
+    }
+    @media (max-width: 768px) {
+      margin-top: -3rem;
+      transition: 1s;
+    }
+  }
+}
+
+// .newButton {
+//   width: 8rem;
+//   border-radius: 0.3rem;
+//   color: white !important;
+//   margin-bottom: 2rem;
+//   font-size: 1rem;
+// }
+
+// .address-form {
+// .form-control{
+//   border: none;
+// }
+
+//   .bussinessCard{
+//     margin-top: 2rem;
+//   }
+//   .card {
+//     border: none;
+//     border-radius: 0.3rem;
+//     &:hover svg {
+//       display: block !important;
+//       cursor: pointer;
+//     }
+//     .card-title {
+//       font-size: 30px;
+//       color: v.$color1;
+//       padding-top: 1rem;
+//       padding-left: 2.5rem;
+//     }
+//   }
+
+//   p {
+//     color: v.$color3;
+//     font-size: 1.1rem;
+//     padding-top: 0.8rem;
+//     padding-bottom: 4rem;
+//     padding-left: 2.5rem;
+//   }
+
+//   .col-md-3 {
+//     padding: 1rem;
+//     @include m.flexbox(row, center, center, 1rem);
+//     svg {
+//       font-size: 1.5rem;
+//       color: v.$color2;
+ 
+//       cursor: pointer;
+//     }
+   
+//   }
+// }

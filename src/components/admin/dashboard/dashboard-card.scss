@@ -1,0 +1,86 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.dashboards-card {
+  position: relative;
+  @media (max-width: 768px) {
+    transition: 1s;
+  }
+  .btn-database {
+    color: white;
+    position: absolute;
+    top: -2rem;
+    right: 0.8rem;
+    &:hover {
+      color: v.$color1;
+    }
+  }
+  a {
+    text-decoration: none;
+    .card {
+      padding-top: 1.5rem;
+      padding-left: 2rem;
+      background-color: lightgray;
+      border: none;
+      color: black;
+
+      .card-title {
+        z-index: 1;
+        .form-check {
+          .form-check-label {
+            margin-left: -0.3rem;
+            margin-top: 0.09rem;
+            cursor: pointer;
+          }
+          .form-check-input {
+            font-size: 1rem;
+            background-color: lightgray;
+            border: 2px solid v.$color2;
+            border-radius: 0;
+          }
+        }
+      }
+      span {
+        font-size: 4rem;
+        line-height: 5.5rem;
+        z-index: 1;
+        transition: 1s;
+        @media (max-width: 1200px) {
+          font-size: 3rem;
+          transition: 1s;
+        }
+      }
+      .card-text {
+        @include m.flexbox(column, center);
+        position: absolute;
+        right: 10%;
+        bottom: 10%;
+        top: 10%;
+        transform: translate(10%);
+        svg {
+          font-size: 4rem;
+          color: rgb(153, 151, 151);
+          @media (max-width: 992px) {
+            width: 10vw !important;
+            transition: 1s;
+          }
+          @media (width: 992px) {
+            width: auto !important;
+          }
+          @media (max-width: 576px) {
+            width: 25vw !important;
+            transition: 1s;
+          }
+          @media (width: 576px) {
+            width: 10vw !important;
+            transition: 1s;
+          }
+          @media (min-width: 1200px) {
+            font-size: 6rem;
+            transition: 1s;
+          }
+        }
+      }
+    }
+  }
+}

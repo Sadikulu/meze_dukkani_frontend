@@ -1,0 +1,113 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.product-new {
+  .stock-alarm {
+    white-space: nowrap;
+  }
+  //1.col
+  .like-active {
+    .form-switch {
+      @include m.flexbox(row, flex-start, center, 1rem);
+      .form-check-input {
+        background-color: v.$color4;
+        cursor: pointer;
+        border: none;
+        padding: 0.65rem 1.5rem;
+        &:checked {
+          background-color: v.$color2;
+          border-color: v.$color2;
+        }
+        &:focus {
+          outline: 0;
+          box-shadow: 0 0 0 0 v.$color1;
+        }
+      }
+      .form-check-label {
+        font-size: 1rem;
+        margin-top: 0.4rem;
+      }
+    }
+  }
+  //2.col kısmı
+  .form-control,
+  .form-select {
+    background-color: v.$color4;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    &:focus {
+      background-color: white;
+      outline: 0;
+      box-shadow: 0 0 0 0.1rem v.$color1;
+    }
+  }
+  .card-add-delete {
+    background-color: v.$color4;
+    padding: 2rem;
+    position: relative;
+    div {
+      img {
+        @media (max-width: 600px) {
+          width: 200px;
+        }
+      }
+    }
+    span {
+      .plus {
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        font-size: 3rem;
+        color: v.$color2;
+      }
+    }
+    > [class^="col"] {
+      .deleteCard {
+        border: none;
+        padding: 1rem;
+        position: relative;
+        @include m.flexbox(row, center, center);
+        &:hover svg {
+          display: block !important;
+        }
+        .minus {
+          position: absolute;
+          top: -0.8rem;
+          left: 0;
+          right: 0;
+          margin: auto;
+          cursor: pointer;
+          color: v.$color2;
+          font-size: 1.5rem;
+          display: none;
+        }
+      }
+    }
+  }
+  div.alert {
+    @include m.flexbox(row, flex-start);
+    padding: 0;
+    border: 0;
+    .alert-warning {
+      border: none;
+      padding: 0.5rem;
+    }
+  }
+  div {
+    .btn-group {
+      gap: 0.8rem;
+      .btn {
+        width: 8rem;
+        color: white;
+        font-size: 1.1rem;
+        @media (max-width: 385px) {
+          width: 7rem;
+        }
+      }
+    }
+  }
+}

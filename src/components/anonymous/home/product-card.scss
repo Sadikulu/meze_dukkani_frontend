@@ -1,0 +1,144 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.product-card {
+  position: relative;
+  a {
+    text-decoration: none;
+    .img-fluid {
+      transition: transform 0.8s ease;
+      transform-origin: center center;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .a-link {
+    //   @include m.flexbox(row, space-between, center);
+    span {
+      color: v.$color4;
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      font-size: 1rem;
+      @media (max-width: 1075px) {
+        font-size: 0.9rem;
+      }
+      @media (max-width: 767px) {
+        font-size: 1rem;
+      }
+    }
+
+    .discount {
+      .card-text {
+        position: absolute;
+        span {
+          background-color: v.$color1;
+        }
+      }
+    }
+
+    .stock-amount {
+      .card-text {
+        position: absolute;
+        right: 0;
+        span {
+          background-color: v.$color2;
+        }
+      }
+    }
+    .cargo-free {
+      .card-text {
+        position: absolute;
+        top: 2.5rem;
+        left: .2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 50%;
+        background-color: v.$color2;
+        transform: rotate(-45deg);
+        padding: 0.1rem;
+        span {
+          color: v.$color4;
+          font-size: 0.9rem;
+          font-weight: bold;
+          &:nth-child(1) {
+            margin-bottom: -0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .card-subtitle {
+    font-size: 1.4rem;
+    color: v.$color2;
+    padding: 0.5rem 1.5rem 0 1.5rem;
+    font-weight: 500;
+    @media (max-width: 991px) {
+      padding: 0.5rem 1rem 0 1rem;
+    }
+    @media (max-width: 767px) {
+      padding: 0.5rem 1.5rem 0 1.5rem;
+    }
+    @media (max-width: 575px) {
+      padding: 0.5rem 3rem 0 3rem;
+    }
+    &.discounted {
+      @include m.flexbox(row, space-between, center);
+      .original-price {
+        font-size: 1.1rem;
+        color: v.$color3;
+      }
+    }
+  }
+  .coming-soon{
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    background-color: v.$color2;
+    color: white;
+  }
+  .btn {
+    padding: 0;
+    color: white;
+    border: none;
+    &.add-button {
+      @include m.flexbox(row, center, center);
+      width: 100%;
+      background-color: v.$color4;
+      span {
+        padding: 0.5rem;
+        &:first-child {
+          flex: 6;
+          color: black;
+          font-weight: 500;
+        }
+        &:last-child {
+          flex: 1;
+          background-color: lightgray;
+          svg {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+  .btn-group {
+    width: 100%;
+    .btn {
+      padding: 0.5rem;
+      &:first-child,
+      &:last-child {
+        flex: 1;
+        svg {
+          font-size: 1.5rem;
+        }
+      }
+      &:nth-child(2) {
+        flex: 5;
+        color: white;
+      }
+    }
+  }
+}

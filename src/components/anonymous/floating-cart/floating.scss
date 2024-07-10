@@ -1,0 +1,61 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+div.floating-cart {
+  z-index: 99;
+  @include m.flexbox(column, center, center);
+  background-color: v.$color1;
+  position: fixed;
+  color: white;
+  top: 58%;
+  right: 0;
+  border-bottom-left-radius: 0.3rem;
+  border-top-left-radius: 0.3rem;
+  box-shadow: 0 0 10px v.$color4;
+
+  @media (max-width: 1100px) {
+    top: 60%;
+  }
+  @media (max-width: 992px) {
+    top: 56.8%;
+  }
+  @media (width: 992px) {
+    top: 60%;
+  }
+  @media (max-width: 776px) {
+    top: 53.8%;
+  }
+  @media (max-width: 576px) {
+    top: 52%;
+  }
+  @media (max-width: 405px) {
+    top: 41.5%;
+  }
+
+  @media (max-width: 320px) {
+    top: 44%;
+  }
+  div {
+    @include m.flexbox(row, center, center, 0.5rem);
+    padding: 0.5rem;
+    span {
+      &:first-child {
+        svg {
+          font-size: 1.2rem;
+        }
+      }
+      &:nth-child(2) {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+    }
+  }
+  .btn {
+    margin: 0 0.7rem 0.7rem;
+    padding: 0.1rem 1rem;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: v.$color1;
+    border-radius: 0.3rem;
+  }
+}

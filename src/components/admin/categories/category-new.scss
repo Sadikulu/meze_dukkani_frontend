@@ -1,0 +1,35 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.category-new {
+  form {
+    .form-label {
+      margin-bottom: 0;
+    }
+    .form-control {
+      background-color: v.$color4;
+      border: none;
+      padding: 0.8rem;
+      padding-left: 1.2rem;
+      &:focus {
+        background-color: white;
+        outline: 0;
+        box-shadow: 0 0 0 0.1rem v.$color1;
+      }
+    }
+    ::placeholder {
+      font-size: 0.7rem;
+    }
+    .btn-group {
+      gap: 0.8rem;
+      .btn {
+        width: 8rem;
+        color: white;
+        font-size: 1.1rem;
+        @media (max-width: 385px) {
+          width: 7rem;
+        }
+      }
+    }
+  }
+}

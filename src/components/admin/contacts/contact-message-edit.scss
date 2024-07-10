@@ -1,0 +1,18 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.admin-contact-message {
+  div {
+    .btn-group {
+      gap: 0.8rem;
+      .btn {
+        width: 8rem;
+        color: white;
+        font-size: 1.1rem;
+        @media (max-width: 385px) {
+          width: 7rem;
+        }
+      }
+    }
+  }
+}

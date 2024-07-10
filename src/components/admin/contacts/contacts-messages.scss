@@ -1,0 +1,47 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.admin-contact-messages {
+  .row {
+    .form-control {
+      background-color: v.$color4;
+      border: none;
+      padding: 0.7rem;
+      &:focus {
+        background-color: white;
+        outline: 0;
+        box-shadow: 0 0 0 0.1rem v.$color1;
+      }
+    }
+    ::placeholder {
+      font-size: 0.7rem;
+    }
+    .input-group-text {
+      background-color: v.$color1;
+      border: 1px solid v.$color1;
+      svg {
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .rdt_Table {
+    .rdt_TableHead {
+      font-size: 13px;
+      .rdt_TableCol {
+        font-weight: 600;
+      }
+    }
+    .rdt_TableBody {
+      :hover {
+        background-color: v.$color4;
+      }
+    }
+    .rdt_TableCell {
+      font-size: 13px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

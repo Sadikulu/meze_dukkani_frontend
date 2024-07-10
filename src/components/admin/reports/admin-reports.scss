@@ -1,0 +1,126 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.admin-reports {
+  h5 {
+    margin: 1rem;
+    @media (max-width: 576px) {
+      font-size: 1rem;
+    }
+  }
+  form {
+    background-color: v.$color4;
+    height: 145px;
+    @media (max-width: 768px) {
+      height: 100%;
+    }
+    @media (width: 768px) {
+      height: 145px;
+    }
+    .orders-select {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+    .invalid-feedback {
+      white-space: nowrap;
+      @media (max-width: 1200px) {
+        font-size: 0.8rem;
+      }
+    }
+    .most-popular-products-input {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      .form-control {
+        min-width: 170px;
+      }
+      .invalid-feedback {
+        @media (max-width: 576px) {
+          white-space: normal;
+        }
+      }
+    }
+    .form-control {
+      background-color: white;
+      border: none;
+      &:focus {
+        background-color: white;
+        outline: 0;
+        box-shadow: 0 0 0 0.1rem v.$color1;
+      }
+      @media (max-width: 1200px) {
+        font-size: 0.8rem;
+      }
+    }
+    ::placeholder {
+      @media (max-width: 576px) {
+        font-size: 0.7rem;
+      }
+    }
+    .form-label {
+      font-size: 1rem;
+      margin: 0;
+      @media (max-width: 576px) {
+        font-size: 0.8rem;
+      }
+    }
+    .form-select {
+      background-color: white;
+      border: none;
+      border-radius: 0;
+      margin-right: 6rem;
+      &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.1rem v.$color1;
+      }
+      @media (max-width: 1200px) {
+        font-size: 0.8rem;
+      }
+    }
+    .report-col{
+      @media (width: 768px) {
+        max-width: 82%;
+      }
+    }
+    .btn-report {
+      @include m.flexbox(column, center, center);
+      padding: 0;
+      height: 145px;
+      @media (max-width: 768px) {
+        height: 100%;
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0 0.8rem;
+      }
+      @media (width: 768px) {
+        padding: 0;
+        height: 145px;
+        width: auto;
+        margin: 0;
+      }
+      .btn {
+        @include m.flexbox(column, center, center);
+        width: 100%;
+        height: 145px;
+        background-color: rgb(153, 151, 151);
+        border: none;
+        @media (max-width: 768px) {
+          height: 100%;
+          width: 100%;
+        }
+        @media (width: 768px) {
+          width: 100%;
+          height: 145px;
+        }
+        svg {
+          font-size: 6rem;
+          @media (max-width: 768px) {
+            font-size: 2rem;
+          }
+          @media (width: 768px) {
+            font-size: 6rem;
+          }
+        }
+      }
+    }
+  }
+}

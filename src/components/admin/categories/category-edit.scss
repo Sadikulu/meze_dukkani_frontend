@@ -1,0 +1,65 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.category-edit {
+  form {
+    .form-label {
+      margin-bottom: 0;
+    }
+    .form-control {
+      background-color: v.$color4;
+      border: none;
+      padding: 0.8rem;
+      padding-left: 1.2rem;
+      &:focus {
+        background-color: white;
+        outline: 0;
+        box-shadow: 0 0 0 0.10rem v.$color1;
+      }
+    }
+    ::placeholder {
+      font-size: 0.7rem;
+    }
+    .form-switch {
+      @include m.flexbox(row, flex-start, center, 1rem);
+      .form-check-input {
+        background-color: v.$color4;
+        cursor: pointer;
+        border: none;
+        padding: 0.65rem 1.5rem;
+        &:checked {
+          background-color: v.$color2;
+          border-color: v.$color2;
+        }
+        &:focus {
+          outline: 0;
+          box-shadow: 0 0 0 0 v.$color1;
+        }
+      }
+      .form-check-label {
+        font-size: 1.2rem;
+        margin-top: 0.4rem;
+      }
+    }
+    .btn-group {
+      gap: 0.8rem;
+      .btn {
+        width: 8rem;
+        color: white;
+        font-size: 1.1rem;
+        @media (max-width: 385px) {
+          width: 7rem;
+        }
+      }
+    }
+  }
+  div.alert{
+    @include m.flexbox(row, flex-start);
+    padding: 0;
+    border: 0;
+    .alert-warning, .alert-danger {
+      border: none;
+      padding: 0.5rem;
+    }
+  }
+}

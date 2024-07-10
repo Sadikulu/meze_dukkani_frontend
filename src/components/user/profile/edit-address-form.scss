@@ -1,0 +1,49 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.edit-address-form {
+  div {
+    &:first-child {
+      .form-control {
+        border-top-right-radius: 0.3rem;
+        border-top-left-radius: 0.3rem;
+      }
+    }
+    &:nth-child(9) {
+      .form-control {
+        border-bottom-left-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+      }
+    }
+    &:last-child {
+      margin-top: .5rem;
+      .btn-group {
+        .btn {
+          @include m.flexbox(row, center, center, 1rem);
+          border: none;
+          background-color: rgb(191, 191, 191);
+          svg {
+            font-size: 1rem;
+          }
+          &:first-child {
+            border-top-left-radius: .3rem;
+            border-bottom-left-radius: .3rem;
+            &:hover {
+              background-color: v.$color1;
+            }
+          }
+          &:last-child {
+            border-top-right-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+            &:hover {
+              background-color: v.$color2;
+            }
+            svg {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

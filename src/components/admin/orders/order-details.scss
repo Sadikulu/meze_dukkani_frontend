@@ -1,0 +1,168 @@
+@use "../../../assets/scss/mixins" as m;
+@use "../../../assets/scss/variables" as v;
+
+.order-detail {
+  .row {
+    .order-left {
+      &:first-child {
+        form {
+          padding: 0.5rem;
+          background-color: rgb(245, 245, 245);
+          .form-select {
+            background-color: v.$color4;
+            border: none;
+            padding: 0.5rem;
+            margin-bottom: 0.7rem;
+            border-radius: 0;
+            &:focus {
+              background-color: white;
+              outline: 0;
+              box-shadow: 0 0 0 0.1rem v.$color1;
+            }
+            option {
+              font-size: 0.9rem;
+            }
+          }
+          .btn-secondary {
+            width: 100%;
+            color: white;
+            margin-bottom: 1rem;
+          }
+          .order-detail-list {
+            .row {
+              > [class^="col-"] {
+                @include m.flexbox(column, center, stretch);
+                flex: 1;
+                ul {
+                  padding: 0;
+                  margin: 0;
+                  li {
+                    @include m.flexbox(row, space-between, center);
+                    list-style-type: none;
+                    margin: 0.5rem 0;
+                    b {
+                      text-overflow: ellipsis;
+                    }
+                    span {
+                      white-space: nowrap;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .shipping-details {
+            p {
+              font-size: 0.9rem;
+              padding-top: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+    .orders-table {
+      thead {
+        tr {
+          th {
+            text-align: end;
+            border: none;
+            white-space: nowrap;
+            @media (max-width: 400px) {
+              font-size: 0.8rem;
+            }
+            &:first-child,
+            &:nth-child(2),
+            &:nth-child(3),
+            &:last-child {
+              text-align: center;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:nth-child(odd) {
+            background-color: rgb(255, 255, 255);
+          }
+          td {
+            text-align: end;
+            border: none;
+            @media (max-width: 400px) {
+              font-size: 0.8rem;
+            }
+            &:first-child {
+              text-align: center;
+              img {
+                width: 70px;
+                background-color: white;
+                @media (max-width: 400px) {
+                  width: 50px;
+                }
+              }
+            }
+            &:nth-child(2) {
+              text-align: start;
+              min-width: 170px;
+            }
+            &:nth-child(3) {
+              text-align: center;
+              white-space: nowrap;
+              span {
+                padding-left: 0.3rem;
+                padding-right: 0.3rem;
+                font-weight: 500;
+              }
+              svg {
+                font-size: 1.4rem;
+                padding-bottom: 0.2rem;
+                cursor: pointer;
+                @media (max-width: 400px) {
+                  font-size: 1rem;
+                  padding-bottom: 0.2rem;
+                }
+              }
+            }
+            &:last-child {
+              svg {
+                font-size: 1.4rem;
+                color: v.$color2;
+                padding-bottom: 0.2rem;
+                // display: none;
+                cursor: pointer;
+                @media (max-width: 400px) {
+                  font-size: 1rem;
+                  padding-bottom: 0.2rem;
+                }
+              }
+            }
+          }
+          // &:hover svg {
+          //   display: block !important;
+          // }
+        }
+      }
+      .update-btn {
+        .btn-primary {
+          width: 8rem;
+          color: white;
+          font-size: 1.1rem;
+          @media (max-width: 385px) {
+            width: rem;
+          }
+        }
+        @media (max-width: 385px) {
+          text-align: center !important;
+        }
+      }
+      div.alert {
+        @include m.flexbox(row, flex-start);
+        padding: 0;
+        border: 0;
+        .alert-warning {
+          border: none;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+}
