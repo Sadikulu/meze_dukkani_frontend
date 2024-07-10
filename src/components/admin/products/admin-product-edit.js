@@ -44,7 +44,10 @@ const AdminProductEdit = () => {
   const [imageSrc, setImageSrc] = useState([]);
   const [updating, setUpdating] = useState(false);
   const [deleting, setDeleting] = useState(false);
-  const [imageDeleting, setImageDeleting] = useState(false);
+  const [
+    //imageDeleting,
+    setImageDeleting,
+  ] = useState(false);
   const [categoryIdData, setCategoryIdData] = useState([]);
   const [reviewsProductData, setReviewsProductData] = useState([]);
   const [paging, setPaging] = useState({});

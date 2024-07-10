@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo3 from "../../../assets/img/logo/logo3.png";
+//import logo3 from "../../../assets/img/logo/logo3.png";
 import {
   encryptedLocalStorage,
   encryptedSessionStorage,

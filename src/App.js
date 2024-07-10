@@ -17,38 +17,38 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const dispatch = useAppDispatch();
 
-  const loadUser = async () => {
-    try {
-      const token =
-        encryptedLocalStorage.getItem("token") ||
-        encryptedSessionStorage.getItem("token");
-      if (token) {
-        const resp = await getUser();
-        console.log("Kullanici yaniti:", resp); // Yanıtı debug için logluyoruz
-        if (resp && resp.data) {
-          dispatch(loginSuccess(resp.data));
-          dispatch(setItems(resp.data.favoriteList));
-        } else {
-          throw new Error("Yanit verisi tanimli değil veya hatali");
-        }
-      }
-    } catch (err) {
-      console.error("Kullanici yüklenirken hata oluştu:", err);
-      toast(err.response?.data?.message || "Bir hata oluştu", "error");
-      dispatch(loginFailed());
-    }
-  };
-
-  const loadData = async () => {
-    await loadUser();
-    await loadCart();
-    setLoading(false);
-  };
-
   useEffect(() => {
+    const loadUser = async () => {
+      try {
+        const token =
+          encryptedLocalStorage.getItem("token") ||
+          encryptedSessionStorage.getItem("token");
+        if (token) {
+          const resp = await getUser();
+          console.log("Kullanici yaniti:", resp); // Yanıtı debug için logluyoruz
+          if (resp && resp.data) {
+            dispatch(loginSuccess(resp.data));
+            dispatch(setItems(resp.data.favoriteList));
+          } else {
+            throw new Error("Yanit verisi tanimli değil veya hatali");
+          }
+        }
+      } catch (err) {
+        console.error("Kullanici yüklenirken hata oluştu:", err);
+        toast(err.response?.data?.message || "Bir hata oluştu", "error");
+        dispatch(loginFailed());
+      }
+    };
+
+    const loadData = async () => {
+      await loadUser();
+      await loadCart();
+      setLoading(false);
+    };
+
     document.title = `${settings.siteName} | Mezeciniz`;
     loadData();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div style={{ backgroundColor: "rgb(237, 237, 237)" }}>
